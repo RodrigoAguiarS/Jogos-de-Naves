@@ -8,22 +8,47 @@ function start() { // Inicio da função start()
 	$("#fundoGame").append("<div id='amigo' class='anima3'></div>");
 
     //Principais variaveis do jogo
-
     var jogo = {};
-    //Game Loop
+    var TECLA = {
+        W: 87,
+        S: 83,
+        D: 68
+    }
+    jogo.pressionou = [];
+    $(document).keydown(function(e){
+        jogo.pressionou[e.which] = true;
+        });
+    $(document).keyup(function(e){
+        jogo.pressionou[e.which] = false;
+        });
 
+
+    //Game Loop
     jogo.timer = setInterval(loop, 30);
 
     function loop(){
-        movefundo();
+    movefundo();
+    movejogador();
     }// fim da funcão loop
-    //Função que movimenta o fundo do jogo
-    function movefundo() {
+    
+    function movefundo() {//Função que movimenta o fundo do jogo
 	
         esquerda = parseInt($("#fundoGame").css("background-position"));
         $("#fundoGame").css("background-position",esquerda-1);
+        }// fim da função movefundo()
     
-        } // fim da função movefundo()
-
-
+    function movejogador() {
+	
+        if (jogo.pressionou[TECLA.W]) {
+            var topo = parseInt($("#jogador").css("top"));
+            $("#jogador").css("top",topo-10); 
+        } 
+        if (jogo.pressionou[TECLA.S]) {
+            var topo = parseInt($("#jogador").css("top"));
+            $("#jogador").css("top",topo+10);	
+        }
+        if (jogo.pressionou[TECLA.D]) {     
+            //Chama função Disparo	
+        }
+    } // fim da função movejogador()   
 } // Fim da função start
