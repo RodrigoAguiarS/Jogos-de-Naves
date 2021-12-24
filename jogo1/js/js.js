@@ -35,6 +35,7 @@ function start() { // Inicio da função start()
     moveinimigo1()
     moveinimigo2()
     moveamigo();
+    colisao();
     }// fim da funcão loop
     
     function movefundo() {//Função que movimenta o fundo do jogo
