@@ -356,3 +356,10 @@ function start() {
         $("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
     }// Fim da função gameOver();
 } // Fim da função start
+
+//Reinicia o jogo
+function reiniciaJogo(){
+    somGameover.pause();
+    $("#fim").remove();
+    start();
+}//Fim da função reiniciaJogo
