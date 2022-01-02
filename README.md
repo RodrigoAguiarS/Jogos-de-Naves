@@ -1,5 +1,5 @@
 # Jogo de Resgate
-## Jogo de Resgate em JavaScript - do curso de JavaScript Game Developer
+## Jogo de Resgate em JavaScript - do Curso de JavaScript Game Developer
 
 O Jogo é feito apenas em JavaScript e contém as seguintes tecnologias:
 - HTML5
